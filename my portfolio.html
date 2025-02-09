@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swetha Thota - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/1600x900/?sky,clouds') no-repeat center center/cover;
+            color: white;  
+            text-align: center;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+
+        /* Background Overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:black;
+            z-index: -1;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #ff5500;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin-left: 500px; 
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: black;
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            text-align: left;
+            padding: 50px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .text-content {
+            max-width: 50%;
+        }
+
+        .text-content h1 {
+            font-size: 50px;
+            margin: 0;
+            animation: floatText 3s infinite alternate;
+        }
+
+        .text-content p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+         /* Social Links */
+         .social-links {
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            font-size: 2rem;
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: transform 0.3s, color 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .fa-linkedin:hover {
+            color: #0077b5; /* LinkedIn Blue */
+        }
+
+        .fa-github:hover {
+            color: #333; /* GitHub Black */
+        }
+
+        .fa-code:hover {
+            color: #f79c00; /* CodeChef Orange */
+        }
+
+        /* Profile Image */
+        .image-content {
+            max-width: 60%;
+        }
+
+        .profile-image {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn {
+            background: #ff5500;
+            padding: 12px 24px;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s, background 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background: #ff9900;
+        }
+
+        /* Profile Image */
+        .image-content {
+            max-width: 60%;
+        }
+
+        .profile-image {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+        }
+
+        /* About Me Section */
+        #about {
+            margin-bottom: 50px; /* Adjust the gap between About Me and View My Work */
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 80%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatText {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo"><h2>SWETHA THOTA</h2></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <div style="text-align: center;">
+                    <div style="text-align: right; display: inline-block; padding: 0 60px;">
+                        <li><a href="#projects">Projects</a></li>                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="text-align: left; display: inline-block; padding: 0 40px;">
+                        <li><a href="#contact">Contact</a></li>                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="hero">
+        <div class="hero-content">
+            <div class="text-content">
+                <h1>Hi, I'm <span>Swetha Thota</span></h1>
+                <p>Frontend Developer | Passionate about Web Technologies</p>
+                
+                <!-- Social Media Icons -->
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/swetha-thota-86b1b0316/" target="_blank" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/swethathota1712" target="_blank" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.codechef.com/users/swethathota" target="_blank" aria-label="CodeChef">
+                        <i class="fa-solid fa-code"></i>
+                    </a>
+                    <br><br>
+                </div>
+
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+
+            <div class="image-content">
+                <img src="WhatsApp Image 2025-02-03 at 19.44.56_9f9f5ecc.jpg" alt="Swetha Thota" class="profile-image">
+            </div>
+            
+        </div>
+    </section>
+        <h2>About Me</h2>
+        <div style="text-align: center;">
+            <div style="text-align: left; display: inline-block; padding: 0 120px;">
+                <p>I'm a passionate Frontend Developer, skilled in HTML, CSS, JavaScript, and React. With a strong foundation in modern web technologies, I specialize in creating responsive, user-friendly websites. I’m always eager to learn and apply new technologies to solve complex challenges..</p>
+            </div>
+        </div>
+        <h2>My Skills Include</h2>
+        <div style="text-align: center;">
+            <div style="text-align: left; display: inline-block;">
+                <p><strong>Frontend Development:</strong> HTML, CSS, JavaScript, Next.js</p>
+                <p><strong>Programming Languages:</strong> Java, Python, Basics of C</p>
+                <p><strong>Database Management:</strong> MySQL</p>
+                <p><strong>Version Control & Tools:</strong> GitHub, Visual Studio Code</p>
+                <p><strong>Soft Skills:</strong> Team Collaboration, Communication, Problem-solving, Quick Learning</p>
+            </div>
+        </div>
+        <h2>Work Philosophy</h2>
+        <div style="text-align: center;">
+            <div style="text-align: left; display: inline-block; padding: 0 120px;">
+        <p> I believe in writing clean, efficient, and maintainable code. Collaboration and open communication are key to successful development, and I love being part of a team that shares ideas and drives innovation.</p>
+            </div>
+        </div>
+        <h2>What Drives Me:</h2>
+        <div style="text-align: center;">
+            <div style="text-align: left; display: inline-block; padding: 0 120px;">
+            <p>Beyond coding, I'm deeply passionate about web accessibility and ensuring my projects are inclusive. This passion keeps me motivated and pushes me to continuously improve.</p>
+            </div>
+        </div>
+        <h2>FunFact</h2>
+        <div style="text-align: center;">
+            <div style="text-align: left; display: inline-block; padding: 0 120px;">
+                <p>When I’m not coding, you can find me playing throwball or exploring new web development trends.</p>
+            </div>
+        </div>
+        <h2> Let's Connect</h2>
+        <div style="text-align: center;">
+            <div style="text-align: left; display: inline-block; padding: 0 120px;">
+                <p>I’m always open to new opportunities and collaborations. Feel free to check out my projects below or reach out if you'd like to work together!</p>
+            </div>
+        </div>     
+
+
+
+
+
+
+
+    </ul>
+            
+        <!-- Work Experience Section -->
+        <h2>Work Experience</h2>
+        <div class="card">
+            <h3>Embedded Systems & Control Engineer</h3>
+            <p><strong>Microlinks | 6 Months</strong></p>
+            <p>Worked on embedded systems and control system development, enhancing automation and optimization techniques.</p>
+        </div>
+        <div class="card">
+            <h3>IoT Engineer</h3>
+            <p><strong>Purple Technologies | 3 Months</strong></p>
+            <p>Developed IoT-based solutions with a focus on real-time data monitoring and sensor integration.</p>
+        </div>
+
+        <!-- Internships Section -->
+        <h2>Internships</h2>
+        <div class="card">
+            <h3>IoT Intern</h3>
+            <p><strong>Purple Technologies | Guntur | June 2024</strong></p>
+            <ul>
+                <li>Developed an IoT-based gas leakage detection system utilizing real-time sensor data.</li>
+                <li>Designed and implemented an interactive and responsive dashboard for monitoring gas levels.</li>
+            </ul>
+        </div>
+
+        <!-- Workshop Section -->
+        <h2>Workshops</h2>
+        <div class="card">
+            <h3>Competitive Coding</h3>
+            <p><strong>Talention Workshop</strong></p>
+            <p>Participated in an in-depth workshop on competitive programming, focusing on problem-solving techniques, algorithm optimization, and real-world coding challenges.</p>
+        </div>
+        <div class="card">
+            <h3>Data Analysis Using Python</h3>
+            <p><strong>APSSDC WORKSHOP</strong></p>
+            <p>Participated in a workshop on Data Analysis using Python, gaining hands-on experience in data analysis and visualization techniques.</p>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="card">
+            <h3>IoT-Based Gas Leakage Detection System</h3>
+            <p>Developed a real-time monitoring and alert system using IoT sensors.</p>
+            <a href="https://github.com/swethathota1712/Gas-Lekage-Detection-System" target="_blank">View Project</a>
+        </div>
+        <div class="card">
+            <h3>Personal Portfolio Website</h3>
+            <p>Designed and developed a fully responsive personal website to showcase projects and technical skills.</p>
+        </div>
+        <div class="card">
+            <h3>Weather App</h3>
+            <p>Developed a simple weather application using HTML, CSS, and JavaScript that fetches real-time weather data using an API.</p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:swethathota1712@gmail.com">swethathota1712@gmail.com</a></p>
+        <p>Phone: +91-9030838188</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/swetha-thota">linkedin.com/in/swetha-thota</a></p>
+        <p>GitHub: <a href="https://github.com/swethathota1712">github.com/swethathota1712</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Swetha Thota. All rights reserved.</p>
+    </footer>
+        </div>
+    
+
+   
+
+</body>
+</html>
